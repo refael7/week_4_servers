@@ -83,13 +83,15 @@ def rail_fence_cipher(text):
 
 def fence_cipher1(text):
     result=""
+    if len(text)%2!=0:
+        text+=' '
     lens=len(text)//2
     text_z =text[:lens]
     text_ez=text[lens:]
     for i in range (lens):
         result+=text_z[i]
         result+=text_ez[i]
-    return result
+    return result.strip()
 
 
 
